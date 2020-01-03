@@ -1,0 +1,28 @@
+#splash {
+  .splash-image {
+    border-right: 0.35rem solid $primary;
+    padding-right: 3rem;
+    width: 325px;
+  }
+
+  #splash-info {
+    .splash-title {
+      font-size: 30px;
+      text-transform: capitalize;
+      padding: 0.75rem;
+      margin: 0 3rem;
+
+      &:first-child {
+        color: $secondary;
+      }
+
+      &:nth-child(2) {
+        color: $primary;
+      }
+
+      &:nth-child(3) {
+        color: #333;
+      }
+    }
+  }
+}

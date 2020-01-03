@@ -1,0 +1,27 @@
+select {
+    background-color: #d4d6dd;
+    border: 1px solid #333;
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 1px 1%;
+    width: 98%;
+    height: 25px;
+    // 
+
+
+
+
+    &:focus {
+        outline: 0 !important;
+    }
+
+    &span {
+        margin: 0 1rem;
+        width: initial;
+    }
+
+    &.incorrect {
+        border: 2px solid #333 !important;
+    }
+}

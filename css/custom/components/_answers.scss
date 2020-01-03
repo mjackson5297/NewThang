@@ -1,0 +1,11 @@
+.correct {
+    background-color: #86E5A8 !important;
+}
+.incorrect {
+    background-color: #FF9297 !important;
+    font-weight: 600;
+    &.checkmark,
+    &select {
+        border: 2px solid #333;
+    }
+}

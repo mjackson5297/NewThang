@@ -1,0 +1,12 @@
+// Import Bootstrap
+// Documentation: https://getbootstrap.com/
+@import './vendor/bootstrap/bootstrap.scss';
+
+// Import Animate
+// Documentation: https://daneden.github.io/animate.css/
+@import './vendor/animate/animate';
+
+// Import Custom 
+@import './custom/mixins';
+@import './custom/slides';
+@import './custom/components';

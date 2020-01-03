@@ -1,0 +1,29 @@
+main,
+#slider,
+.slide {
+  height: 93vh;
+  overflow: hidden;
+  width: 100vw;
+}
+
+#slider {
+  padding: 0 !important;
+  position: relative;
+  z-index: 1;
+
+  .slide {
+    @include slide-in-right;
+    display: none;
+    width: 100vw;
+
+    &.active {
+      @include row;
+      @include justify-around;
+      width: 100vw;
+
+      &#splash {
+        @include justify-center;
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="Course-Name-Here" version="1.0.0" 
+  xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" 
+  xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3" 
+  xmlns:adlseq="http://www.adlnet.org/xsd/adlseq_v1p3" 
+  xmlns:adlnav="http://www.adlnet.org/xsd/adlnav_v1p3" 
+  xmlns:imsss="http://www.imsglobal.org/xsd/imsss" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 schemas/imscp_v1p1.xsd
+	                          http://www.adlnet.org/xsd/adlcp_v1p3 schemas/adlcp_v1p3.xsd
+	                          http://www.adlnet.org/xsd/adlseq_v1p3 schemas/adlseq_v1p3.xsd
+	                          http://www.adlnet.org/xsd/adlnav_v1p3 schemas/adlnav_v1p3.xsd
+	                          http://www.imsglobal.org/xsd/imsss schemas/imsss_v1p0.xsd">
+
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>2004 4th Edition</schemaversion>
+  </metadata>
+  <organizations default="Course-Name-Here">
+    <organization identifier="Course-Name-Here" adlseq:objectivesGlobalToSystem="false">
+      <title>Course Name Here</title>
+      <item identifier="sco_code" identifierref="resource_1" isvisible="true">
+        <title>Course Name Here</title>
+        <imsss:sequencing>
+          <imsss:controlMode useCurrentAttemptObjectiveInfo="true" useCurrentAttemptProgressInfo="true"/>
+          <imsss:deliveryControls objectiveSetByContent="true"/>
+        </imsss:sequencing>
+
+        <!-- Hides Blackboard UI -->
+        <adlnav:presentation>
+          <adlnav:navigationInterface>
+            <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+            <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+            <adlnav:hideLMSUI>abandon</adlnav:hideLMSUI>
+            <adlnav:hideLMSUI>abandonAll</adlnav:hideLMSUI>
+            <adlnav:hideLMSUI>exitAll</adlnav:hideLMSUI>
+            <adlnav:hideLMSUI>exit</adlnav:hideLMSUI>
+          </adlnav:navigationInterface>
+        </adlnav:presentation>
+        <!-- -->
+
+      </item>
+      <imsss:sequencing>
+        <imsss:controlMode flow="true" choice="true"/>
+        <imsss:sequencingRules>
+          <imsss:postConditionRule>
+            <imsss:ruleConditions conditionCombination="all">
+              <imsss:ruleCondition condition="always"/>
+            </imsss:ruleConditions>
+            <imsss:ruleAction action="retryAll"/>
+          </imsss:postConditionRule>
+        </imsss:sequencingRules>
+        <imsss:rollupRules rollupObjectiveSatisfied="true" rollupProgressCompletion="true" objectiveMeasureWeight="0">
+          <imsss:rollupRule childActivitySet="all">
+            <imsss:rollupConditions conditionCombination="any">
+              <imsss:rollupCondition condition="satisfied"/>
+            </imsss:rollupConditions>
+            <imsss:rollupAction action="satisfied"/>
+          </imsss:rollupRule>
+          <imsss:rollupRule childActivitySet="any">
+            <imsss:rollupConditions conditionCombination="any">
+              <imsss:rollupCondition operator="not" condition="satisfied"/>
+            </imsss:rollupConditions>
+            <imsss:rollupAction action="notSatisfied"/>
+          </imsss:rollupRule>
+          <imsss:rollupRule childActivitySet="any">
+            <imsss:rollupConditions conditionCombination="any">
+              <imsss:rollupCondition operator="not" condition="satisfied"/>
+            </imsss:rollupConditions>
+            <imsss:rollupAction action="incomplete"/>
+          </imsss:rollupRule>
+          <imsss:rollupRule childActivitySet="all">
+            <imsss:rollupConditions conditionCombination="any">
+              <imsss:rollupCondition condition="completed"/>
+            </imsss:rollupConditions>
+            <imsss:rollupAction action="completed"/>
+          </imsss:rollupRule>
+        </imsss:rollupRules>
+      </imsss:sequencing>
+    </organization>
+  </organizations>
+  <resources>
+<!-- Resources - All included files should be listed here -->
+    <resource identifier="resource_1" adlcp:scormType="sco" href="index.html" type="webcontent">
+
+      <!-- HTML Pages -->
+      <file href="index.html"/>
+
+      <!-- JavaScript -->
+      <file href="js/data.min.js"/>
+      <file href="js/scorm-api-wrapper.min.js"/>
+      <file href="js/noSnoop.js"/>
+      <file href="js/scripts.js"/>
+
+      <!--Styling/CSS -->
+      <file href="css/style.min.css"/>
+
+      <!-- IMAGES -->
+
+    </resource>
+
+  </resources>
+</manifest>

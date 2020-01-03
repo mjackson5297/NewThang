@@ -1,0 +1,49 @@
+// Create these as you need them
+@mixin animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@mixin animated-fast {
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@mixin slide-in-left {
+    @include animated;
+    -webkit-animation-name: slideInLeft;
+    animation-name: slideInLeft;
+}
+
+@mixin slide-in-left-fast {
+    @include animated-fast;
+    -webkit-animation-name: slideInLeft;
+    animation-name: slideInLeft;
+}
+
+@mixin slide-in-right {
+    @include animated;
+    -webkit-animation-name: slideInRight;
+    animation-name: slideInRight;
+}
+
+@mixin slide-in-right-fast {
+    @include animated-fast;
+    -webkit-animation-name: slideInRight;
+    animation-name: slideInRight;
+}
+
+@mixin shadowed {
+    -webkit-box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, 0.4);
+}
+
+@mixin fade-in {
+    @include animated;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}

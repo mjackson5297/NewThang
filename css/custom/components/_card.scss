@@ -1,0 +1,30 @@
+.card {
+  // Instruction cards
+  &.content-card,
+  &.instruction-card {
+    // margin: 1.5rem;
+
+    &.content-card,
+    &.instruction-card,
+    .card-header {
+      border: 0;
+      border-radius: 0;
+    }
+
+    .card-body {
+      padding: 1.25rem 0.25rem;
+    }
+  }
+
+  &.content-card {
+    width: 55%;
+  }
+
+  &.instruction-card {
+    width: 30%;
+
+    .card-header {
+      letter-spacing: 0.1rem;
+    }
+  }
+}

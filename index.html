@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Course Title</title>
+
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="js/scorm-api-wrapper.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar bg-white p-2 shadow-sm">
+    <div class="nav-left">
+      <!-- Toggles Navigation Menu -->
+      <button id="menu-toggle" class="btn" onclick="toggleClass('menu','d-none');">
+        <img aria-hidden="true" src="./imgs/icon-bars.svg" alt="">
+      </button>
+
+      <span id="courseTitle" class="navbar-brand font-weight-bold">Course Title
+        <span id="courseSubtitle" class="font-weight-normal"> | Course Subtitle</span>
+      </span>
+    </div>
+
+    <div class="nav-right">
+      <span class="margin-right-md" id="studentName"></span>
+      <span id="studentInitials">&nbsp;</span>
+      <img id="nav-icon" src="./imgs/logo-postal-seal.png" class="mr-2" alt="Postal School Seal">
+    </div>
+  </nav>
+
+  <!-- Navigation Menu -->
+  <aside id="menu" class="drawer d-none shadow-sm">
+    <div id="menu-content" class="d-flex flex-column align-items-start text-secondary"></div>
+  </aside>
+
+  <!-- Notes - Toggled with 'N'- Remove if not needed -->
+  <aside id="notes" class="drawer d-none pt-4 shadow-sm"></aside>
+
+  <!-- Course Content -->
+  <main id="slider" class="container-fluid">
+    <section id="splash" class="slide active">
+      <img alt="Postal Eagle" class="splash-image" src="imgs/logo-eagle.png">
+      <div class="column" id="splash-info">
+
+        <div class="splash-title">
+          Course Title
+        </div>
+
+        <div class="splash-title">
+          Course Subtitle
+        </div>
+
+        <div class="splash-title">
+          Task #123456789 | Lesson #ABCDEFG
+        </div>
+
+      </div>
+      <button class="btn navigation-controls" onclick="loadNextSlide();">
+        <img src="/imgs/icon-chevron-circle-right.svg">
+      </button>
+    </section>
+
+    <!-- objectives -->
+    <section id="objectives" class="slide">
+      <div class="card instruction-card">
+        <h5 class="card-header bg-primary text-white">OBJECTIVE</h5>
+        <div class="card-body">
+          <p>This exercise will measure your ability to Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore
+            doloremque eos eveniet impedit nam esse veritatis doloribus error, repellendus dolorum assumenda eligendi
+            nisi, magni maiores! Provident consectetur alias laborum veniam.</p>
+        </div>
+      </div>
+      <button class="btn navigation-controls" onclick="loadNextSlide();">
+        <img src="/imgs/icon-chevron-circle-right.svg">
+      </button>
+    </section>
+
+    <!-- instructions -->
+    <section id="instructions" class="slide">
+      <article class="card instruction-card">
+        <h5 class="card-header bg-primary text-white">INSTRUCTIONS</h5>
+        <div class="card-body">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis quaerat aspernatur reiciendis
+            consequatur ea quisquam quasi optio consectetur perspiciatis molestiae, est iure ab sit consequuntur
+            repellat nisi culpa quibusdam suscipit.</p>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam doloribus placeat numquam in repudiandae ex
+            fuga culpa at aut quo corporis molestiae tempora ipsam, accusantium sapiente labore eum iusto voluptatem.
+          </p>
+        </div>
+      </article>
+
+      <!-- This button prepares test questions and loads the first exercise -->
+      <button class="btn navigation-controls" onclick="prepareData();loadNextSlide();">
+        <img src="/imgs/icon-chevron-circle-right.svg">
+      </button>
+    </section>
+
+    <!-- Situation 1 -->
+    <section id="situation1" class="slide">
+      <!-- Slide Instructions -->
+      <article class="card instruction-card">
+        <h5 class="card-header bg-primary text-white">INSTRUCTIONS</h5>
+        <div class="card-body">
+          <p>Instructions for the current slide/exercise.</p>
+
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos error perferendis eius asperiores quas
+            excepturi ea sed expedita temporibus? Reprehenderit exercitationem labore quis, tempore autem voluptatibus
+            dicta quae explicabo magni!</p>
+          <button class="btn btn-white shadow-sm" onclick="checkAnswers('example')">Submit</button>
+        </div>
+      </article>
+
+      <!-- Slide Content -->
+      <article class="card content-card">
+        <div class="card-body">
+          <p class="text-center">Select the correct answer.</p>
+          <!-- <div class="text-center"> -->
+          <select id="sit1-example-dropdown-example"></select>
+
+          <label class="check-container" id="sit1-example-checkbox-example">
+            <input autocomplete="off" class="checkbox" type="checkbox">
+          </label>
+        </div class="text-center">
+
+        <!-- </div> -->
+      </article>
+
+      <button class="btn navigation-controls" onclick="loadNextSlide();"><img
+          src="/imgs/icon-chevron-circle-right.svg"></button>
+    </section>
+
+    <!-- Situation 2 -->
+    <section id="situation2" class="slide">
+      <!-- Slide Instructions -->
+      <article class="card instruction-card">
+        <h5 class="card-header bg-primary text-white">INSTRUCTIONS</h5>
+        <div class="card-body">
+          <p>Instructions for the current slide/exercise.</p>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt laboriosam hic repudiandae et, quibusdam
+            tempore facere unde, totam neque autem quisquam maxime, sequi ut optio veniam possimus. Incidunt, id quasi?
+          </p>
+
+          <button onclick="checkAnswers('1384')" class="btn btn-white shadow-sm">Submit</button>
+        </div>
+      </article>
+
+      <div class="card content-card">
+        <div class="card-body">
+          <p class="text-center">Exercise/Questions/Content here</p>
+        </div>
+      </div>
+      <button class="btn navigation-controls" onclick="loadNextSlide();">
+        <img src="/imgs/icon-chevron-circle-right.svg">
+      </button>
+    </section>
+
+    <!-- Situation 3 -->
+    <section id="situation3" class="slide">
+      <!-- Slide Instructions -->
+      <article class="card instruction-card">
+        <h5 class="card-header bg-primary text-white">INSTRUCTIONS</h5>
+        <div class="card-body">
+          <p>Instructions for the current slide/exercise.</p>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt laboriosam hic repudiandae et, quibusdam
+            tempore facere unde, totam neque autem quisquam maxime, sequi ut optio veniam possimus. Incidunt, id quasi?
+          </p>
+
+          <button onclick="checkAnswers('1384')" class="btn btn-white shadow-sm">Submit</button>
+        </div>
+      </article>
+
+      <div class="card content-card">
+        <div class="card-body">
+          <p class="text-center">Exercise/Questions/Content here</p>
+        </div>
+      </div>
+
+      <!-- The last exercise slide should call setComplete() -->
+      <button class="btn navigation-controls" onclick=" setComplete();loadNextSlide();">
+        <img src="/imgs/icon-chevron-circle-right.svg">
+      </button>
+    </section>
+
+    <section id="complete" class="slide">
+      <div class="card instruction-card">
+        <h5 class="card-header bg-primary text-white">You Have Completed Course Name!</h5>
+        <div class="card-body">
+          <p>
+            Labore doloremque eos eveniet impedit nam esse veritatis doloribus error, repellendus dolorum assumenda
+            eligendi
+            nisi, magni maiores! Provident consectetur alias laborum veniam.
+          </p>
+
+          <!-- This button disconnects from blackboard, saves the student's score, and closes the window -->
+          <button onclick="scorm.terminate();window.close();" class="btn btn-white shadow-sm font-weight-bold">
+            Save &amp; Exit
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+  <button id="note-toggle" class="shadow-sm" onclick="toggleClass('notes', 'd-none');"></button>
+  <!-- *** Comment out 'noSnoop.js' to make development easier *** -->
+  <!-- <script src="js/noSnoop.js" type="text/javascript"></script> -->
+  <script src="js/data.js" type="text/javascript"></script>
+  <script src="js/scripts.js" type="text/javascript"></script>
+</body>
+
+</html>

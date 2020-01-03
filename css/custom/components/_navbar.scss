@@ -1,0 +1,17 @@
+nav {
+  z-index: 5;
+  border-bottom: 0.25rem solid $secondary;
+
+  .nav-left {
+    #menu-toggle > img {
+      vertical-align: unset !important;
+      width: 1.25rem;
+    }
+  }
+
+  .nav-right {
+    #nav-icon {
+      width: 2.3rem;
+    }
+  }
+}
